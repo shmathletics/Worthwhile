@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#303035">
+  <meta name="description" content="يستحق - أداة ذكية لتحليل المحتوى وقياس مصداقيته وأهميته">
+  <title>Yastahiq | يستحق</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div id="app">
+
+  <!-- الخلفية المتحركة -->
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <!-- Header -->
+  <header class="top">
+    <div class="brand">
+      <span class="mark">ي</span>
+      <div class="brand-info">
+        <b id="brand">يستحق</b>
+        <small id="tag">هل يستحق هذا انتباهك؟</small>
+      </div>
+    </div>
+
+    <button id="collapse" class="ico" hidden aria-label="إغلاق">
+      <svg class="chev" viewBox="0 0 24 24">
+        <path d="M9 6l6 6-6 6"/>
+      </svg>
+    </button>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="tabs">
+    <button data-tab="analyze" class="on" id="tabA">
+      <span class="tab-icon">✦</span>
+      التحليل
+    </button>
+
+    <button data-tab="settings" id="tabS">
+      <span class="tab-icon">⚙</span>
+      الإعدادات
+    </button>
+  </nav>
+
+  <main>
+
+    <!-- ANALYSIS -->
+    <section id="tab-analyze">
+
+      <div class="welcome">
+        <span class="welcome-label">SMART CONTENT ANALYSIS</span>
+        <h1>قبل أن تمنحه<br><span>انتباهك..</span></h1>
+        <p>اكتشف قيمة المحتوى، وحلّل مدى موثوقيته وأهميته.</p>
+        <div class="welcome-decoration">ي</div>
+      </div>
+
+      <!-- Source Card -->
+      <div class="card src">
+        <div class="source-heading">
+          <div class="source-icon">↗</div>
+          <div>
+            <div id="srcTitle" class="st">لم تُقرأ أي صفحة بعد</div>
+            <div id="srcMeta" class="muted">
+              الصق رابطًا أو افتح صفحة للبدء
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <input
+            id="link"
+            type="url"
+            dir="ltr"
+            placeholder="Paste a link..."
+            aria-label="رابط الصفحة"
+          >
+          <button id="read" class="sec">اقرأ الصفحة</button>
+        </div>
+      </div>
+
+      <!-- Main Action -->
+      <button id="analyze" class="primary">
+        <span>حلّل الآن</span>
+        <span class="button-arrow">✦</span>
+      </button>
+
+      <div id="status" class="status" hidden></div>
+
+      <!-- Results -->
+      <div id="result" hidden>
+
+        <div id="verdict" class="verdict"></div>
+
+        <div class="results-heading">
+          <span class="section-kicker">ANALYSIS REPORT</span>
+          <h2>نتائج التحليل</h2>
+        </div>
+
+        <div id="gauges" class="gauges"></div>
+
+        <div id="why" class="card why"></div>
+
+      </div>
+
+      <footer class="footer">
+        <span class="footer-mark">ي</span>
+        <span>يستحق | لأن انتباهك يستحق الحماية</span>
+      </footer>
+
+    </section>
+
+    <!-- SETTINGS -->
+    <section id="tab-settings" hidden>
+
+      <div class="welcome settings-welcome">
+        <span class="welcome-label">PERSONALIZE YOUR EXPERIENCE</span>
+        <h1>إعدادات<br><span>يستحق.</span></h1>
+        <p>خصص تجربتك واختر طريقة تحليل المحتوى.</p>
+      </div>
+
+      <div class="card form">
+
+        <div class="settings-title">
+          <span class="settings-icon">✦</span>
+          <div>
+            <h2>إعدادات التحليل</h2>
+            <p class="muted">تحكم في محرك الذكاء الاصطناعي</p>
+          </div>
+        </div>
+
+        <label id="lProv">مزوّد الذكاء الاصطناعي</label>
+        <select id="provider">
+          <option value="openai">OpenAI</option>
+          <option value="gemini">Google Gemini</option>
+        </select>
+
+        <label id="lModel">النموذج (يمكن تعديله)</label>
+        <input id="model" dir="ltr" placeholder="gemini-2.0-flash">
+
+        <label id="lKey">مفتاح API</label>
+        <input id="key" type="password" dir="ltr" autocomplete="off">
+
+        <label id="lInt">اهتماماتك (تُستخدم لقياس الصلة)</label>
+        <textarea
+          id="interests"
+          rows="3"
+          placeholder="مثال: الذكاء الاصطناعي، الاقتصاد، الصحة النفسية"
+        ></textarea>
+
+        <label id="lLang">اللغة</label>
+        <select id="lang">
+          <option value="auto">Auto</option>
+          <option value="ar">العربية</option>
+          <option value="en">English</option>
+        </select>
+
+        <button id="save" class="primary">
+          <span>حفظ الإعدادات</span>
+          <span class="button-arrow">✓</span>
+        </button>
+
+        <p id="privacy" class="muted privacy">
+          يُخزَّن المفتاح محليًا في متصفحك فقط، ويُرسَل المحتوى إلى مزوّد النموذج الذي تختاره للتحليل.
+        </p>
+
+      </div>
+
+      <footer class="footer">
+        <span class="footer-mark">ي</span>
+        <span>يستحق | إعداداتك، تجربتك</span>
+      </footer>
+
+    </section>
+
+  </main>
+</div>
+
+<script src="sidepanel.js"></script>
+</body>
+</html>
