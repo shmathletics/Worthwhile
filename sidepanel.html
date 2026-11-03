@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yastahiq | يستحق</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <header class="top">
+    <div class="brand"><span class="mark">ي</span><div><b id="brand"></b><small id="tag"></small></div></div>
+    <button id="collapse" class="ico" hidden><svg class="chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+  </header>
+  <nav class="tabs">
+    <button data-tab="analyze" class="on" id="tabA"></button>
+    <button data-tab="settings" id="tabS"></button>
+  </nav>
+  <main>
+    <section id="tab-analyze">
+      <div class="card src">
+        <div id="srcTitle" class="st"></div>
+        <div id="srcMeta" class="muted"></div>
+        <div class="row"><input id="link" type="url" dir="ltr"><button id="read" class="sec"></button></div>
+      </div>
+      <button id="analyze" class="primary"></button>
+      <div id="status" class="status" hidden></div>
+      <div id="result" hidden>
+        <div id="verdict" class="verdict"></div>
+        <div id="gauges" class="gauges"></div>
+        <div id="why" class="card why"></div>
+      </div>
+    </section>
+    <section id="tab-settings" hidden>
+      <div class="card form">
+        <label id="lProv"></label>
+        <select id="provider"><option value="openai">OpenAI</option><option value="gemini">Google Gemini</option></select>
+        <label id="lModel"></label><input id="model" dir="ltr">
+        <label id="lKey"></label><input id="key" type="password" dir="ltr" autocomplete="off">
+        <label id="lInt"></label><textarea id="interests" rows="3"></textarea>
+        <label id="lLang"></label>
+        <select id="lang"><option value="auto">Auto</option><option value="ar">العربية</option><option value="en">English</option></select>
+        <button id="save" class="primary"></button>
+        <p id="privacy" class="muted"></p>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="sidepanel.js"></script>
+</body>
+</html>

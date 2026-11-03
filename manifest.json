@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Yastahiq | يستحق",
+  "version": "1.0.0",
+  "description": "Does this deserve your attention? AI-powered quality, objectivity and style scoring for any page, tweet or YouTube video. | هل يستحق هذا المحتوى انتباهك؟",
+  "permissions": ["sidePanel", "activeTab", "scripting", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "Yastahiq | يستحق" },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "content_scripts": [
+    { "matches": ["http://*/*", "https://*/*"], "js": ["content.js"], "run_at": "document_idle" }
+  ],
+  "web_accessible_resources": [
+    { "resources": ["sidepanel.html", "sidepanel.js", "styles.css"], "matches": ["<all_urls>"] }
+  ]
+}
